@@ -1,0 +1,41 @@
+name: Apply Keynako dictionary submission
+
+on:
+  repository_dispatch:
+    types: [keynako_dictionary_submission]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: keynako-dictionary-submissions
+  cancel-in-progress: false
+
+jobs:
+  apply-submission:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the latest dictionary
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Apply and validate the submission
+        env:
+          CLIENT_PAYLOAD: ${{ toJson(github.event.client_payload) }}
+        run: |
+          python scripts/apply_keynako_submission.py --payload-json "$CLIENT_PAYLOAD"
+          python -m unittest discover -v
+          python scripts/validate_json.py Dictionary/data_v1.json
+
+      - name: Commit the live dictionary update
+        run: |
+          if git diff --quiet -- Dictionary/data_v1.json; then
+            echo "The submitted conversion already matches the dictionary."
+            exit 0
+          fi
+          git config user.name "keynako-dictionary-bot"
+          git config user.email "keynako-dictionary-bot@users.noreply.github.com"
+          git add Dictionary/data_v1.json
+          git commit -m "dictionary: apply Keynako shared conversion"
+          git push origin HEAD:main

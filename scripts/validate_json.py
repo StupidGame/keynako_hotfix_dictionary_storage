@@ -41,6 +41,21 @@ def validate(path: Path) -> bool:
         if missing:
             print(f"Entry {i} missing keys: {', '.join(sorted(missing))}")
             return False
+        importance = entry.get("importance")
+        if importance is not None and (
+            isinstance(importance, bool)
+            or not isinstance(importance, int)
+            or importance not in range(1, 6)
+        ):
+            print(f"Entry {i} importance must be an integer from 1 to 5")
+            return False
+        categories = entry.get("categories")
+        if categories is not None and (
+            not isinstance(categories, list)
+            or not all(isinstance(value, str) for value in categories)
+        ):
+            print(f"Entry {i} categories must be a list of strings")
+            return False
     return True
 
 
