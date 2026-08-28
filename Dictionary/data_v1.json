@@ -4,7 +4,7 @@
         "name": "data_v1.json",
         "description": "A JSON file containing a list of dictionaries.",
         "version": "1.1",
-        "last_update": "2026-08-28T03:11:51+00:00"
+        "last_update": "2026-08-28T03:12:06+00:00"
     },
     "data": [
         {
@@ -330,6 +330,20 @@
         {
             "word": "仮面ライダー",
             "ruby": "かめんらいだー",
+            "word_weight": -7.5,
+            "importance": 4,
+            "lcid": 1291,
+            "rcid": 1291,
+            "mid": 501,
+            "date": "2026-08-28",
+            "author": "Keynako app",
+            "categories": [
+                "人・動物・会社などの名前"
+            ]
+        },
+        {
+            "word": "マイス",
+            "ruby": "まいす",
             "word_weight": -7.5,
             "importance": 4,
             "lcid": 1291,
