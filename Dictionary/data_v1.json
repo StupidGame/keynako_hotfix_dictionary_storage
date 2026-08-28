@@ -4,7 +4,7 @@
         "name": "data_v1.json",
         "description": "A JSON file containing a list of dictionaries.",
         "version": "1.1",
-        "last_update": "2026-08-28T03:13:20+00:00"
+        "last_update": "2026-08-28T05:40:25+00:00"
     },
     "data": [
         {
@@ -368,6 +368,18 @@
             "categories": [
                 "人・動物・会社などの名前"
             ]
+        },
+        {
+            "word": "おぐら配列",
+            "ruby": "おぐらはいれつ",
+            "word_weight": -12.5,
+            "importance": 2,
+            "lcid": 1288,
+            "rcid": 1288,
+            "mid": 501,
+            "date": "2026-08-28",
+            "author": "Keynako app",
+            "categories": []
         }
     ]
 }
