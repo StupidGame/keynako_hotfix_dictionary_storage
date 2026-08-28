@@ -8,7 +8,7 @@ Keynakoのユーザ辞書で「この変換をKeynakoと共有」をオンにし
 ## 自動反映の構成
 
 1. KeynakoがHTTPSゲートウェイへ変換を送信します。
-2. `scripts/keynako_submission_gateway.gs` がGitHubの `repository_dispatch` を発行します。
+2. `gateway/Code.gs` がGitHubの `repository_dispatch` を発行します。
 3. `.github/workflows/keynako-submission.yaml` が内容を検証し、同じ読み・単語を追加または更新して `main` へコミットします。
 4. Keynakoは辞書ファイルのSHAを5分おきに確認し、変更があれば端末へ取り込みます。
 
@@ -16,7 +16,7 @@ Keynakoのユーザ辞書で「この変換をKeynakoと共有」をオンにし
 
 アプリへGitHubトークンを埋め込まないため、トークンはGoogle Apps Scriptのスクリプトプロパティだけに保存します。
 
-1. `scripts/keynako_submission_gateway.gs` をGoogle Apps Scriptへ配置します。
+1. `gateway` ディレクトリをGoogle Apps Scriptへ配置します。
 2. 対象レポジトリだけへアクセスできるfine-grained tokenを作り、スクリプトプロパティ `GITHUB_TOKEN` に設定します。必要なら `GITHUB_OWNER` と `GITHUB_REPOSITORY` も設定します。
 3. ウェブアプリとしてデプロイし、実行ユーザを所有者、アクセスを全員に設定します。
 4. デプロイURLをKeynakoレポジトリのActions変数 `KEYNAKO_DICTIONARY_SUBMISSION_URL` に設定します。

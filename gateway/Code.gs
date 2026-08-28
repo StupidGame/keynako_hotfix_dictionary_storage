@@ -1,12 +1,24 @@
 const GITHUB_API_VERSION = '2022-11-28';
 
+function doGet() {
+  const configured = Boolean(
+    PropertiesService.getScriptProperties().getProperty('GITHUB_TOKEN'),
+  );
+  return jsonResponse({
+    ok: true,
+    service: 'Keynako dictionary gateway',
+    configured: configured,
+  });
+}
+
 function doPost(event) {
   try {
     if (!event || !event.postData || event.postData.length > 16384) {
       throw new Error('Invalid request body');
     }
     const submission = JSON.parse(event.postData.contents);
-    validateSubmission(submission);
+    const healthcheck = submission.action === 'healthcheck';
+    if (!healthcheck) validateSubmission(submission);
 
     const properties = PropertiesService.getScriptProperties();
     const token = properties.getProperty('GITHUB_TOKEN');
@@ -26,8 +38,10 @@ function doPost(event) {
           'X-GitHub-Api-Version': GITHUB_API_VERSION,
         },
         payload: JSON.stringify({
-          event_type: 'keynako_dictionary_submission',
-          client_payload: submission,
+          event_type: healthcheck
+            ? 'keynako_dictionary_healthcheck'
+            : 'keynako_dictionary_submission',
+          client_payload: healthcheck ? {} : submission,
         }),
         muteHttpExceptions: true,
       },
