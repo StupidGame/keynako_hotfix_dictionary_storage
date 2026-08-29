@@ -4,7 +4,7 @@
         "name": "data_v1.json",
         "description": "A JSON file containing a list of dictionaries.",
         "version": "1.1",
-        "last_update": "2026-08-28T05:40:25+00:00"
+        "last_update": "2026-08-29T05:03:55+00:00"
     },
     "data": [
         {
@@ -380,6 +380,20 @@
             "date": "2026-08-28",
             "author": "Keynako app",
             "categories": []
+        },
+        {
+            "word": "Wienners",
+            "ruby": "うぃーなーず",
+            "word_weight": -10.0,
+            "importance": 3,
+            "lcid": 1291,
+            "rcid": 1291,
+            "mid": 501,
+            "date": "2026-08-29",
+            "author": "Keynako app",
+            "categories": [
+                "人・動物・会社などの名前"
+            ]
         }
     ]
 }
