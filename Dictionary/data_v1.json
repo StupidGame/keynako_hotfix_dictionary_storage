@@ -4,7 +4,7 @@
         "name": "data_v1.json",
         "description": "A JSON file containing a list of dictionaries.",
         "version": "1.1",
-        "last_update": "2026-08-29T05:03:55+00:00"
+        "last_update": "2026-08-31T12:23:53+00:00"
     },
     "data": [
         {
@@ -394,6 +394,19 @@
             "categories": [
                 "人・動物・会社などの名前"
             ]
+        },
+        {
+            "word": "トリリオン",
+            "ruby": "とりりおん",
+            "word_weight": -10.0,
+            "importance": 3,
+            "lcid": 1288,
+            "rcid": 1288,
+            "mid": 501,
+            "date": "2026-08-31",
+            "author": "Keynako app",
+            "categories": [],
+            "note": "IME候補改善: 第2候補を選択"
         }
     ]
 }
