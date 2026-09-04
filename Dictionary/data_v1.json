@@ -4,7 +4,7 @@
         "name": "data_v1.json",
         "description": "A JSON file containing a list of dictionaries.",
         "version": "1.1",
-        "last_update": "2026-09-04T08:37:26+00:00"
+        "last_update": "2026-09-04T08:51:37+00:00"
     },
     "data": [
         {
@@ -344,16 +344,15 @@
         {
             "word": "マイス",
             "ruby": "まいす",
-            "word_weight": -7.5,
-            "importance": 4,
-            "lcid": 1291,
-            "rcid": 1291,
+            "word_weight": -10.0,
+            "importance": 3,
+            "lcid": 1288,
+            "rcid": 1288,
             "mid": 501,
-            "date": "2026-08-28",
+            "date": "2026-09-04",
             "author": "Keynako app",
-            "categories": [
-                "人・動物・会社などの名前"
-            ]
+            "categories": [],
+            "note": "IME候補改善: 第2候補を選択"
         },
         {
             "word": "Keynako",
