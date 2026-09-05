@@ -4,7 +4,7 @@
         "name": "data_v1.json",
         "description": "A JSON file containing a list of dictionaries.",
         "version": "1.1",
-        "last_update": "2026-09-05T00:08:58+00:00"
+        "last_update": "2026-09-05T02:07:34+00:00"
     },
     "data": [
         {
@@ -692,6 +692,19 @@
             "author": "Keynako app",
             "categories": [],
             "note": "IME候補改善: 第2候補を選択"
+        },
+        {
+            "word": "アギ",
+            "ruby": "あぎ",
+            "word_weight": -10.0,
+            "importance": 3,
+            "lcid": 1288,
+            "rcid": 1288,
+            "mid": 501,
+            "date": "2026-09-05",
+            "author": "Keynako app",
+            "categories": [],
+            "note": "IME候補改善: 第3候補を選択"
         }
     ]
 }
