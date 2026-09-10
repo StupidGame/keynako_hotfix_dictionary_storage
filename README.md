@@ -9,7 +9,7 @@ Keynakoのユーザ辞書で「この変換をKeynakoと共有」をオンにし
 
 1. KeynakoがHTTPSゲートウェイへ変換を送信します。
 2. `gateway/Code.gs` がGitHubの `repository_dispatch` を発行します。
-3. `.github/workflows/keynako-submission.yaml` が内容を検証し、同じ読み・単語を追加または更新して `main` へコミットします。
+3. `.github/workflows/keynako-submission.yaml` が内容を検証し、同じ読み・単語を1件へ統合して `main` へコミットします。
 4. Keynakoは辞書ファイルのSHAを5分おきに確認し、変更があれば端末へ取り込みます。
 
 ### ゲートウェイの初回設定
@@ -85,5 +85,7 @@ Keynakoのユーザ辞書で「この変換をKeynakoと共有」をオンにし
 | `categories` | 共有時に選ばれた品詞カテゴリ。既存データでは省略できます。 |
 
 ---
+
+同じ `ruby` と `word` の組み合わせは1件だけ保持します。Keynakoから既存の変換が再送された場合は、最新の投稿内容へ更新したうえで重複を1件へ統合します。
 
 このように **`metadata`** にファイル全体の管理情報を、**`data`** に実際の辞書レコードを保持することで、ホットフィックス辞書の自動配信とバージョン管理を容易にしています。
