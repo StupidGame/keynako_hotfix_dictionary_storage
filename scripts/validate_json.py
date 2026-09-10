@@ -33,6 +33,7 @@ def validate(path: Path) -> bool:
         print("'data' must be a list")
         return False
 
+    seen_conversions: dict[tuple[str, str], int] = {}
     for i, entry in enumerate(entries):
         if not isinstance(entry, dict):
             print(f"Entry {i} must be an object")
@@ -41,6 +42,19 @@ def validate(path: Path) -> bool:
         if missing:
             print(f"Entry {i} missing keys: {', '.join(sorted(missing))}")
             return False
+        word = entry["word"]
+        ruby = entry["ruby"]
+        if not isinstance(word, str) or not isinstance(ruby, str):
+            print(f"Entry {i} word and ruby must be strings")
+            return False
+        conversion = (word, ruby)
+        if conversion in seen_conversions:
+            print(
+                f"Entries {seen_conversions[conversion]} and {i} contain the same "
+                f"conversion: {ruby} -> {word}"
+            )
+            return False
+        seen_conversions[conversion] = i
         importance = entry.get("importance")
         if importance is not None and (
             isinstance(importance, bool)

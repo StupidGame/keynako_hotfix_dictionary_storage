@@ -67,6 +67,65 @@ class ApplyKeynakoSubmissionTests(unittest.TestCase):
         self.assertEqual(len(entries), 1)
         self.assertEqual(entries[0]["importance"], 4)
 
+    def test_consolidates_existing_duplicate_conversions(self):
+        document = json.loads(self.path.read_text(encoding="utf-8"))
+        document["data"] = [
+            {
+                "word": "Keynako",
+                "ruby": "きーなこ",
+                "word_weight": -15.0,
+                "lcid": 1288,
+                "rcid": 1288,
+                "mid": 501,
+                "date": "2025-01-01",
+                "author": "first",
+            },
+            {
+                "word": "別の変換",
+                "ruby": "べつのへんかん",
+                "word_weight": -15.0,
+                "lcid": 1288,
+                "rcid": 1288,
+                "mid": 501,
+                "date": "2025-01-01",
+                "author": "test",
+            },
+            {
+                "word": "Keynako",
+                "ruby": "きーなこ",
+                "word_weight": -10.0,
+                "lcid": 1291,
+                "rcid": 1291,
+                "mid": 501,
+                "date": "2025-01-02",
+                "author": "second",
+            },
+        ]
+        self.path.write_text(json.dumps(document, ensure_ascii=False), encoding="utf-8")
+
+        changed = apply_submission(
+            self.path,
+            {
+                "word": "Keynako",
+                "ruby": "きーなこ",
+                "importance": 4,
+                "categories": ["人・動物・会社などの名前"],
+            },
+            now=self.now,
+        )
+
+        self.assertTrue(changed)
+        entries = json.loads(self.path.read_text(encoding="utf-8"))["data"]
+        matching = [
+            entry
+            for entry in entries
+            if entry["word"] == "Keynako" and entry["ruby"] == "きーなこ"
+        ]
+        self.assertEqual(len(entries), 2)
+        self.assertEqual(len(matching), 1)
+        self.assertEqual(matching[0]["importance"], 4)
+        self.assertEqual(matching[0]["author"], "Keynako app")
+
     def test_rejects_invalid_importance(self):
         with self.assertRaises(SubmissionError):
             apply_submission(

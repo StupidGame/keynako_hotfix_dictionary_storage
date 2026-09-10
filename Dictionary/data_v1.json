@@ -4,7 +4,7 @@
         "name": "data_v1.json",
         "description": "A JSON file containing a list of dictionaries.",
         "version": "1.1",
-        "last_update": "2026-09-10T20:58:18+00:00"
+        "last_update": "2026-09-10T21:00:06+00:00"
     },
     "data": [
         {
@@ -188,16 +188,6 @@
             "author": "Google Form"
         },
         {
-            "word": "堪え",
-            "ruby": "こらえ",
-            "word_weight": -15,
-            "lcid": 625,
-            "rcid": 625,
-            "mid": 501,
-            "date": "2025-06-09",
-            "author": "Google Form"
-        },
-        {
             "word": "ピサの斜塔",
             "ruby": "ぴさのしゃとう",
             "word_weight": -10.0,
@@ -283,16 +273,6 @@
             "word_weight": -15,
             "lcid": 814,
             "rcid": 814,
-            "mid": 501,
-            "date": "2025-08-03",
-            "author": "Google Form"
-        },
-        {
-            "word": "誘え",
-            "ruby": "いざなえ",
-            "word_weight": -15,
-            "lcid": 826,
-            "rcid": 826,
             "mid": 501,
             "date": "2025-08-03",
             "author": "Google Form"

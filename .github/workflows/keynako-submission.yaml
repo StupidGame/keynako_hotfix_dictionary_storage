@@ -20,7 +20,7 @@ jobs:
         with:
           ref: main
 
-      - name: Apply and validate the submission
+      - name: Apply, consolidate, and validate the submission
         env:
           CLIENT_PAYLOAD: ${{ toJson(github.event.client_payload) }}
         run: |

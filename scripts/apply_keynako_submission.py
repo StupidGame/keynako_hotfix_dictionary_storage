@@ -99,23 +99,21 @@ def apply_submission(
     if submission["note"]:
         entry["note"] = submission["note"]
 
-    existing = next(
-        (
-            value
-            for value in entries
-            if isinstance(value, dict)
-            and value.get("word") == entry["word"]
-            and value.get("ruby") == entry["ruby"]
-        ),
-        None,
-    )
-    if existing == entry:
+    matching_indexes = [
+        index
+        for index, value in enumerate(entries)
+        if isinstance(value, dict)
+        and value.get("word") == entry["word"]
+        and value.get("ruby") == entry["ruby"]
+    ]
+    if len(matching_indexes) == 1 and entries[matching_indexes[0]] == entry:
         return False
-    if existing is None:
+    if not matching_indexes:
         entries.append(entry)
     else:
-        existing.clear()
-        existing.update(entry)
+        entries[matching_indexes[0]] = entry
+        for index in reversed(matching_indexes[1:]):
+            del entries[index]
 
     metadata["version"] = "1.1"
     metadata["last_update"] = current.isoformat(timespec="seconds")

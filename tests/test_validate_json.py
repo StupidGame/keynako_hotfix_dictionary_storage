@@ -51,6 +51,35 @@ class ValidateJsonTests(unittest.TestCase):
         finally:
             tmp_path.unlink()
 
+    def test_duplicate_conversion(self):
+        entry = {
+            "word": "Keynako",
+            "ruby": "きーなこ",
+            "word_weight": -15.0,
+            "lcid": 1288,
+            "rcid": 1288,
+            "mid": 501,
+            "date": "2025-01-01",
+            "author": "test",
+        }
+        data = {
+            "metadata": {
+                "status": "active",
+                "name": "tmp.json",
+                "description": "temp",
+                "version": "1.0",
+                "last_update": "2025-01-01T00:00:00",
+            },
+            "data": [entry, {**entry, "lcid": 1291, "rcid": 1291}],
+        }
+        with tempfile.NamedTemporaryFile("w", delete=False, suffix=".json") as tmp:
+            json.dump(data, tmp, ensure_ascii=False)
+            tmp_path = Path(tmp.name)
+        try:
+            self.assertFalse(validate_json.validate(tmp_path))
+        finally:
+            tmp_path.unlink()
+
     def test_cli_valid_exit_code(self):
         path = Path("Dictionary/data_v1.json")
         result = subprocess.run(
