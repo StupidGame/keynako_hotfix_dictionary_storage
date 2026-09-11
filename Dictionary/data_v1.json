@@ -4,7 +4,7 @@
         "name": "data_v1.json",
         "description": "A JSON file containing a list of dictionaries.",
         "version": "1.1",
-        "last_update": "2026-09-10T21:34:37+00:00"
+        "last_update": "2026-09-11T00:47:41+00:00"
     },
     "data": [
         {
@@ -1135,10 +1135,10 @@
             "lcid": 1288,
             "rcid": 1288,
             "mid": 501,
-            "date": "2026-09-08",
+            "date": "2026-09-11",
             "author": "Keynako app",
             "categories": [],
-            "note": "IME候補改善: 第3候補を選択"
+            "note": "Windows candidate right-click"
         },
         {
             "word": "ノクス",
