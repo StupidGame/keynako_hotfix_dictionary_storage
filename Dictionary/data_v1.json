@@ -4,7 +4,7 @@
         "name": "data_v1.json",
         "description": "A JSON file containing a list of dictionaries.",
         "version": "1.1",
-        "last_update": "2026-09-11T11:03:35+00:00"
+        "last_update": "2026-09-11T11:49:37+00:00"
     },
     "data": [
         {
@@ -421,10 +421,10 @@
             "lcid": 1288,
             "rcid": 1288,
             "mid": 501,
-            "date": "2026-09-01",
+            "date": "2026-09-11",
             "author": "Keynako app",
             "categories": [],
-            "note": "Windows candidate right-click"
+            "note": "IME候補改善: 第2候補を選択"
         },
         {
             "word": "コンフリクトを解消して",
