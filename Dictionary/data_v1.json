@@ -4,7 +4,7 @@
         "name": "data_v1.json",
         "description": "A JSON file containing a list of dictionaries.",
         "version": "1.1",
-        "last_update": "2026-09-12T12:03:29+00:00"
+        "last_update": "2026-09-12T21:12:20+00:00"
     },
     "data": [
         {
@@ -1477,6 +1477,19 @@
             "author": "Keynako app",
             "categories": [],
             "note": "IME候補改善: 第2候補を選択"
+        },
+        {
+            "word": "プルリクエスト",
+            "ruby": "ぷるりくえすと",
+            "word_weight": -10.0,
+            "importance": 3,
+            "lcid": 1288,
+            "rcid": 1288,
+            "mid": 501,
+            "date": "2026-09-12",
+            "author": "Keynako app",
+            "categories": [],
+            "note": "IME候補改善: 第3候補を選択"
         }
     ]
 }
