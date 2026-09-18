@@ -4,7 +4,7 @@
         "name": "data_v1.json",
         "description": "A JSON file containing a list of dictionaries.",
         "version": "1.1",
-        "last_update": "2026-09-18T02:09:44+00:00"
+        "last_update": "2026-09-18T02:09:54+00:00"
     },
     "data": [
         {
@@ -1619,7 +1619,7 @@
             "date": "2026-09-18",
             "author": "Keynako app",
             "categories": [],
-            "note": "Windows candidate right-click"
+            "note": "IME候補改善: 第37候補を選択"
         }
     ]
 }
