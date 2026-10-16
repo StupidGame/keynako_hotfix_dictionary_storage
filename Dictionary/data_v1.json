@@ -1128,19 +1128,6 @@
             "note": "IME候補改善: 第2候補を選択"
         },
         {
-            "word": "仮面ライダー",
-            "ruby": "かめ",
-            "word_weight": -10.0,
-            "importance": 3,
-            "lcid": 1288,
-            "rcid": 1288,
-            "mid": 501,
-            "date": "2026-09-11",
-            "author": "Keynako app",
-            "categories": [],
-            "note": "Windows candidate right-click"
-        },
-        {
             "word": "ノクス",
             "ruby": "のくす",
             "word_weight": -10.0,
