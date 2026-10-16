@@ -4,7 +4,7 @@
         "name": "data_v1.json",
         "description": "A JSON file containing a list of dictionaries.",
         "version": "1.1",
-        "last_update": "2026-10-15T22:13:27+00:00"
+        "last_update": "2026-10-16T03:57:26+00:00"
     },
     "data": [
         {
@@ -1798,7 +1798,7 @@
             "lcid": 1288,
             "rcid": 1288,
             "mid": 501,
-            "date": "2026-10-15",
+            "date": "2026-10-16",
             "author": "Keynako app",
             "categories": [],
             "note": "IME候補改善: 第5候補を選択"
