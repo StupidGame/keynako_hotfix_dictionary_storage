@@ -1765,19 +1765,6 @@
             "note": "IME候補改善: 第4候補を選択"
         },
         {
-            "word": "近鉄四日市駅から",
-            "ruby": "きんてつ",
-            "word_weight": -10.0,
-            "importance": 3,
-            "lcid": 1288,
-            "rcid": 1288,
-            "mid": 501,
-            "date": "2026-10-03",
-            "author": "Keynako app",
-            "categories": [],
-            "note": "IME候補改善: 第4候補を選択"
-        },
-        {
             "word": "デュエキング",
             "ruby": "でゅえきんぐ",
             "word_weight": -10.0,
